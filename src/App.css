@@ -5,6 +5,10 @@
   text-align: center;
 }
 
+.headshot {
+  height: 10em;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
