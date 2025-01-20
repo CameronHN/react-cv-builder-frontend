@@ -11,9 +11,9 @@ const Contact = () => {
       message: ""
     },
     validate: {
-      name: (value) => (value.trim() ? null : "Name is required."),
+      name: (value) => (value.trim().length != 0 ? null : "Name is required."),
       // Test to check if the provided email is valid
-      email: (value) => /^\S+@\S+$/.test(value) ? null : "Invalid email format.",
+      email: (value) => (/^\S+@\S+$/.test(value) ? null : "Invalid email format."),
       message: (value) => (value.trim() ? null : "Message is required."),
     },
   });
@@ -33,9 +33,9 @@ const Contact = () => {
 
       <Box maw={500} mx={"auto"}>
         <form id="contact-form" onSubmit={form.onSubmit(handleSubmit)}>
-          <TextInput label="Name:" placeholder="Your name" {...form.getInputProps("name")} />
-          <TextInput label="Email:" placeholder="Your email" mt="md" {...form.getInputProps("email")} />
-          <Textarea label="Message:" placeholder="Your message" mt="md" rows={7} cols={40} {...form.getInputProps("message")} />
+          <TextInput label="Name:" placeholder="Your name" key={form.key('name')} {...form.getInputProps("name")} />
+          <TextInput label="Email:" placeholder="Your email" key={form.key('email')} mt="md" {...form.getInputProps("email")} />
+          <Textarea label="Message:" placeholder="Your message" key={form.key('message')} required mt="md" rows={7} cols={40} {...form.getInputProps("message")} />
           <Button type="submit" mt="md">Submit</Button>
         </form>
       </Box>
