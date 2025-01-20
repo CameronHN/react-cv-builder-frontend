@@ -6,7 +6,7 @@ const Hobbies = () => {
             <table width="100%">
                 <tr>
                     <td>Outdoor activities</td>
-                    <td>Programming activities</td>
+                    <td>Indoor activities</td>
                 </tr>
                 <tr>
                     <td>Participating in marathons</td>
