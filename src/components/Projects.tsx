@@ -5,6 +5,7 @@ export interface Project {
     date: string;
     stack: string[];
     description: string[];
+    preview: string;
 }
 
 export const projectsData: Project[] = [
@@ -22,7 +23,8 @@ export const projectsData: Project[] = [
             'Developed a responsive weather forecasting application that fetches real-time weather data from the OpenWeatherMap API.',
             'Integrated search functionality allowing users to look up weather conditions by city name.',
             'Implemented features such as weather icons, temperature conversion, and a five-day forecast display.'
-        ]
+        ],
+        preview: "https://www.youtube.com/embed/6BU_ELSsDLc"
     },
     {
         name: "E-commerce Platform",
@@ -37,7 +39,8 @@ export const projectsData: Project[] = [
             'Built a full-stack e-commerce platform with user authentication, product catalog, shopping cart, and order management system.',
             'Integrated a secure payment gateway for transactions.',
             'Implemented an admin dashboard for managing products, orders, and user accounts.'
-        ]
+        ],
+        preview: "https://media.tenor.com/-mgjSBPiYd4AAAAC/what-have-i-done-regret.gif"
     },
     {
         name: "Personal Finance Tracker",
@@ -51,7 +54,8 @@ export const projectsData: Project[] = [
             'Developed a personal finance tracking application to help users manage their expenses and budgets.',
             'Integrated Firebase for real-time data storage and user authentication. ',
             'Implemented features such as expense categorization, budget tracking, and data visualization with charts.'
-        ]
+        ],
+        preview: "https://www.youtube.com/embed/vSKRVbVg6l4"
     }
 ]
 
@@ -72,6 +76,8 @@ export const ProjectComponent: React.FC<{ data: Project[] }> = ({ data }) => (
                         <div>{description}</div>
                     ))}
                     <br />
+                    <b>Preview:</b>
+                    <p><iframe src={projectSet.preview} width="520" height="330"></iframe></p>
                 </div>
             ))
         }
