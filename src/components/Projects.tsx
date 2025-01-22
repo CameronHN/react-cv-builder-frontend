@@ -77,7 +77,7 @@ export const ProjectComponent: React.FC<{ data: Project[] }> = ({ data }) => (
                     ))}
                     <br />
                     <b>Preview:</b>
-                    <p><iframe src={projectSet.preview} width="520" height="330"></iframe></p>
+                    <p><iframe src={projectSet.preview} /></p>
                 </div>
             ))
         }
