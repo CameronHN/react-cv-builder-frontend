@@ -7,8 +7,10 @@ import Contact from './Contact';
 
 const Content = () => {
 
+    // Initialise state variable currentPage with the initial value "home"
     const [currentPage, setCurrentPage] = useState<string>("home");
 
+    // Render content based on the current page
     const renderPageContent = () => {
         switch (currentPage) {
             case "home":
@@ -28,6 +30,7 @@ const Content = () => {
 
     return (
         <>
+            {/* Navigation bar with buttons to change the current page */}
             <nav>
                 <button onClick={() => setCurrentPage("home")}>Home</button>
                 <button onClick={() => setCurrentPage("details")}>Details</button>
@@ -38,6 +41,7 @@ const Content = () => {
                 <a href="src\file\Test_document.pdf" download><button value="Download mt CV">Download my CV</button></a>
             </nav>
 
+            {/* Main content area where the current page content is rendered */}
             <main>
                 {renderPageContent()}
             </main>
