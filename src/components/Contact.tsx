@@ -4,8 +4,14 @@ import { FaPhone, FaLinkedin, FaAt } from "react-icons/fa6";
 
 const Contact = () => {
 
+  interface FormValues {
+    name: string;
+    email: string;
+    message: string;
+  }
+
   // Initialise the form with Mantine's useForm hook
-  const form = useForm({
+  const form = useForm<FormValues>({
     initialValues: {
       name: "",
       email: "",
@@ -13,9 +19,9 @@ const Contact = () => {
     },
     // Validation functions for the input fields
     validate: {
-      name: (value) => (value.trim().length != 0 ? null : "Name is required."),
-      email: (value) => (/^\S+@\S+$/.test(value) ? null : "Invalid email format."),
-      message: (value) => (value.trim().length != 0 ? null : "Message is required."),
+      name: (value: string) => (value.trim().length != 0 ? null : "Name is required."),
+      email: (value: string) => (/^\S+@\S+$/.test(value) ? null : "Invalid email format."),
+      message: (value: string) => (value.trim().length != 0 ? null : "Message is required."),
     },
   });
 
