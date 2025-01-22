@@ -1,4 +1,4 @@
-import { Card, Image, Group, AccordionItemProps } from '@mantine/core'
+import { Card, Image, Group } from '@mantine/core'
 import React from 'react';
 
 import {
@@ -7,13 +7,15 @@ import {
     AccordionItemHeading,
     AccordionItemButton,
     AccordionItemPanel,
-} from 'react-accessible-accordion';
+} from 'react-accessible-accordion'; // Import accordion components from react-accessible-accordion
 
+// Define the interface
 interface Hobbies {
     value: string;
     description: string;
 }
 
+// Sample data
 const indoorHobbies: Hobbies[] = [
     {
         value: 'Automation/Scripting',
@@ -61,65 +63,66 @@ const Hobbies = () => {
     return (
         <>
             <h2>Hobbies</h2>
-                <table width="80%" align="center">
-                    <tr>
-                        <td>
-                            <Card shadow="sm" padding="lg" radius="md" withBorder>
-                                <Card.Section>
-                                    <Image
-                                        src="/OIP (1).jpg"
-                                        height={200}
-                                    />
-                                </Card.Section>
+            <table width="80%" align="center">
+                <tr>
+                    <td>
+                        {/* Card for indoor activities */}
+                        <Card shadow="sm" padding="lg" radius="md" withBorder>
+                            <Card.Section>
+                                <Image
+                                    src="/OIP (1).jpg"
+                                    height={200}
+                                />
+                            </Card.Section>
+                            <Group>
+                                {/* allowZeroExpanded allows the accordion to be collapsible */}
+                                <Accordion allowZeroExpanded>
+                                    <AccordionItem>
+                                        <AccordionItemHeading>
+                                            <AccordionItemButton>
+                                                Indoor Activities
+                                            </AccordionItemButton>
+                                        </AccordionItemHeading>
+                                        <AccordionItemPanel>
+                                            <HobbiesComponent data={indoorHobbies} />
+                                        </AccordionItemPanel>
+                                    </AccordionItem>
+                                </Accordion>
+                            </Group>
+                        </Card>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        {/* Card for outdoor activities */}
+                        <Card shadow="sm" padding="lg" radius="md" withBorder>
+                            <Card.Section>
+                                <Image
+                                    src="/on-the-need-to-touch-grass.jpg"
+                                    height={160}
+                                />
+                            </Card.Section>
+                            <Group>
+                                <Accordion allowZeroExpanded>
+                                    <AccordionItem>
+                                        <AccordionItemHeading>
+                                            <AccordionItemButton>
+                                                Outdoor Activities
+                                            </AccordionItemButton>
+                                        </AccordionItemHeading>
+                                        <AccordionItemPanel>
+                                            <HobbiesComponent data={outdoorHobbies} />
+                                        </AccordionItemPanel>
+                                    </AccordionItem>
+                                </Accordion>
+                            </Group>
 
-                                <Group>
-                                    <Accordion allowZeroExpanded>
-                                        <AccordionItem>
-                                            <AccordionItemHeading>
-                                                <AccordionItemButton>
-                                                    Indoor Activities
-                                                </AccordionItemButton>
-                                            </AccordionItemHeading>
-                                            <AccordionItemPanel>
-                                                <HobbiesComponent data={indoorHobbies} />
-                                            </AccordionItemPanel>
-                                        </AccordionItem>
-                                    </Accordion>
-                                </Group>
-                            </Card>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <Card shadow="sm" padding="lg" radius="md" withBorder>
-                                <Card.Section>
-                                    <Image
-                                        src="/on-the-need-to-touch-grass.jpg"
-                                        height={160}
-                                    />
-                                </Card.Section>
-
-                                <Group>
-                                    <Accordion allowZeroExpanded>
-                                        <AccordionItem>
-                                            <AccordionItemHeading>
-                                                <AccordionItemButton>
-                                                    Outdoor Activities
-                                                </AccordionItemButton>
-                                            </AccordionItemHeading>
-                                            <AccordionItemPanel>
-                                                <HobbiesComponent data={outdoorHobbies} />
-                                            </AccordionItemPanel>
-                                        </AccordionItem>
-                                    </Accordion>
-                                </Group>
-
-                            </Card>
-                        </td>
-                    </tr>
-                </table>
-            </>
-            );
+                        </Card>
+                    </td>
+                </tr>
+            </table>
+        </>
+    );
 };
 
-            export default Hobbies
+export default Hobbies
