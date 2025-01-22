@@ -1,5 +1,6 @@
 import React from 'react'
 
+// Define interface
 export interface Project {
     name: string;
     date: string;
@@ -8,6 +9,7 @@ export interface Project {
     preview: string;
 }
 
+// Sample data
 export const projectsData: Project[] = [
     {
         name: "Weather App",
@@ -59,6 +61,7 @@ export const projectsData: Project[] = [
     }
 ]
 
+// Component to displayt the project data
 export const ProjectComponent: React.FC<{ data: Project[] }> = ({ data }) => (
     <div>
         {
@@ -85,6 +88,7 @@ export const ProjectComponent: React.FC<{ data: Project[] }> = ({ data }) => (
     </div>
 );
 
+// Main Projects component that uses the ProjectComponent to display projects data
 const Projects = () => {
     return (
         <>
