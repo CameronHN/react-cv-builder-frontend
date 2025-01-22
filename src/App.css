@@ -1,75 +1,107 @@
 #root {
+  /* Set a maximum width for the root element */
   max-width: 1280px;
+  /* Center the root element horizontally */
   margin: 0 auto;
+  /* Add padding around the root element */
   padding: 2rem;
+  /* Center-align text within the root element */
   text-align: center;
 }
 
 .headshot {
+  /* Set a fixed height for headshot images */
   height: 15em;
 }
 
 .logo {
+  /* Set a fixed height for logo images */
   height: 6em;
+  /* Add padding around logo images */
   padding: 1.5em;
+  /* Optimise performance by indicating that this element will change */
   will-change: filter;
+  /* Smoothly transition the filter property over 300ms */
   transition: filter 300ms;
 }
+
 .logo:hover {
+  /* Add a drop shadow on hover to logo images */
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
+  /* Add a drop shadow with React-specific colour on hover */
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
 @keyframes logo-spin {
+
+  /* Define a spinning animation for logo images */
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
 @media (prefers-reduced-motion: no-preference) {
+
+  /* Apply spinning animation to the second logo */
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
 }
 
 .card {
+  /* Add padding around card elements */
   padding: 2em;
 }
 
 iframe {
+  /* Ensure iframes fit within their containers */
   max-width: 100%;
+  /* Auto adjust iframe height */
   height: auto;
 }
 
 /* Accordion styling */
 .accordion {
+  /* Add a light border around accordion containers */
   border: 1px solid rgba(0, 0, 0, 0.1);
+  /* Slightly round the corners of accordion containers */
   border-radius: 2px;
 }
 
 .accordion__item+.accordion__item {
+  /* Add a border between accordion items */
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .accordion__button {
+  /* Set the text colour */
   color: rgba(255, 255, 255, 0.87);
+  /* Change the cursor to a pointer on hover */
   cursor: pointer;
+  /* Add padding within accordion buttons */
   padding: 18px;
+  /* Align text to the left within accordion buttons */
   text-align: left;
+  /* Remove border from accordion buttons */
   border: none;
 }
 
 .accordion__button:hover {
+  /* Change background colour on hover */
   background-color: #ddd;
+  /* Change text colour on hover */
   color: #242424;
 }
 
 .accordion__button:before {
+  /* Display a custom icon before the accordion button text */
   display: inline-block;
   content: '';
   height: 10px;
@@ -82,15 +114,19 @@ iframe {
 
 .accordion__button[aria-expanded='true']::before,
 .accordion__button[aria-selected='true']::before {
+  /* Rotate the custom icon when the accordion is expanded */
   transform: rotate(45deg);
 }
 
 [hidden] {
+  /* Hide elements with the 'hidden' attribute */
   display: none;
 }
 
 .accordion__panel {
+  /* Add padding within accordion panels */
   padding: 20px;
+  /* Animate the accordion panel fade-in */
   animation: fadein 0.35s ease-in;
 }
 
