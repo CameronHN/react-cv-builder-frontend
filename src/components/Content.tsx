@@ -7,7 +7,7 @@ import Contact from './Contact';
 
 const Content = () => {
 
-    const [currentPage, setCurrentPage] = useState<"home" | "details" | "projects" | "hobbies" | "contact">("home");
+    const [currentPage, setCurrentPage] = useState<string>("home");
 
     const renderPageContent = () => {
         switch (currentPage) {
