@@ -1,5 +1,5 @@
 import { useForm } from "@mantine/form";
-import { TextInput, Textarea, Button, Box } from "@mantine/core";
+import { TextInput, Textarea, Button, Box, Anchor } from "@mantine/core";
 import { FaPhone, FaLinkedin, FaAt } from "react-icons/fa6";
 
 const Contact = () => {
@@ -15,7 +15,7 @@ const Contact = () => {
       name: (value) => (value.trim().length != 0 ? null : "Name is required."),
       // Test to check if the provided email is valid
       email: (value) => (/^\S+@\S+$/.test(value) ? null : "Invalid email format."),
-      message: (value) => (value.trim() ? null : "Message is required."),
+      message: (value) => (value.trim().length != 0 ? null : "Message is required."),
     },
   });
 
@@ -28,9 +28,18 @@ const Contact = () => {
     <>
       <h2>Reach out to me!</h2>
 
-      <a href="https://www.google.com" target="_blank"><Button variant="default" leftSection={<FaPhone size={14} />}>  Phone</Button></a>
-      <a href="https://www.linkedin.com" target="_blank"><Button variant="default" leftSection={<FaLinkedin size={14} />}>  LinkedIn</Button></a>
-      <a href="https://www.google.com" target="_blank"><Button variant="default" leftSection={<FaAt size={14} />}>  Email</Button></a>
+      <Anchor href="https://www.google.com" target="_blank">
+        <Button variant="default" leftSection={<FaPhone size={14} />}>  Phone</Button>
+      </Anchor>
+
+      <Anchor href="https://www.linkedin.com" target="_blank">
+        <Button variant="default" leftSection={<FaLinkedin size={14} />}>  LinkedIn</Button>
+      </Anchor>
+
+      <Anchor href="https://www.google.com" target="_blank">
+        <Button variant="default" leftSection={<FaAt size={14} />}>   Email</Button>
+      </Anchor>
+      {/* Use action icons from Mantine */}
 
       <h2>Or pop me a message!</h2>
 
