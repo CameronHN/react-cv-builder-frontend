@@ -1,5 +1,6 @@
 import React from 'react'
 
+// Define the interfaces
 interface Experience {
     role: string;
     date: string;
@@ -18,6 +19,7 @@ interface Skill {
     skills: string[];
 }
 
+// Sample data for the details
 const experienceData: Experience[] = [
     {
         role: "Software Developer at Tech Solutions Inc.",
@@ -89,6 +91,7 @@ export const skillsData: Skill[] = [
     }
 ];
 
+// Components to display the details
 const ExperienceComponent: React.FC<{ data: Experience[] }> = ({ data }) => (
     <div>
         {
