@@ -2,6 +2,7 @@ import { skillsData } from "./Details";
 import Headshot from "./Headshot";
 import { projectsData } from "./Projects";
 
+// Define the interfaces
 interface Person {
     firstName: string;
     lastName: string;
@@ -20,6 +21,7 @@ interface About {
     major: string;
 }
 
+// Flatten and sort all the skills data into a single array of strings
 const skillsArr: string[] = skillsData.flatMap(skill => skill.skills).sort();
 
 const personDetails = {
@@ -40,14 +42,17 @@ const aboutDetails = {
     major: "Computer Science"
 }
 
+// Generate a personal greeting on the landing page
 function personalGreeting(person: Person) {
     return "Hello, I'm " + person.firstName + "  " + person.lastName
 }
 
+// Generate a introduction on the landing page
 function introduction(detail: Introduction) {
     return "I'm a " + detail.profession + " based in " + detail.location + ". I specialize in " + detail.specialisation + " and have a passion for " + detail.passion + ". With " + detail.yearsOfExperience + " years of experience, I bring a unique blend of creativity and technical skills to every project."
 }
 
+// Generate an about section on the landing page
 function about(detail: About) {
     return "I graduated from " + detail.recentInstitute + " with a degree in " + detail.major + ". Over the years, I've had the privilege to work with amazing clients and companies, which has allowed me to grow both professionally and personally."
 }
@@ -55,6 +60,7 @@ function about(detail: About) {
 const Home = () => {
     return (
         <>
+            {/* Display headshot */}
             <Headshot />
 
             <h2>{personalGreeting(personDetails)}</h2>
