@@ -1,35 +1,19 @@
-import { useForm } from "@mantine/form";
-import { TextInput, Textarea, Button, Box, Anchor } from "@mantine/core";
+import { Button, Box, Anchor } from "@mantine/core";
 import { FaPhone, FaLinkedin, FaAt } from "react-icons/fa6";
+import { useForm } from "@formspree/react";
 
 const Contact = () => {
 
-  interface FormValues {
-    name: string;
-    email: string;
-    message: string;
+  const [state, handleSubmit] = useForm("mrbegknk");
+
+  // Display a thank you message and redirect to the homepage
+  if (state.succeeded) {
+    return <>
+      <p>Thank you for your message! I'll get to you very soon.</p>
+      <p>Redirecting to the home page in 5 seconds...</p>
+      <meta http-equiv="refresh" content="5;url=/" />
+    </>
   }
-
-  // Initialise the form with Mantine's useForm hook
-  const form = useForm<FormValues>({
-    initialValues: {
-      name: "",
-      email: "",
-      message: ""
-    },
-    // Validation functions for the input fields
-    validate: {
-      name: (value: string) => (value.trim().length != 0 ? null : "Name is required."),
-      email: (value: string) => (/^\S+@\S+$/.test(value) ? null : "Invalid email format."),
-      message: (value: string) => (value.trim().length != 0 ? null : "Message is required."),
-    },
-  });
-
-  // Display a message and reset the form when the form is complete and submitted
-  const handleSubmit = () => {
-    alert("Your message has been sent!");
-    form.reset();
-  };
 
   return (
     <>
@@ -56,11 +40,34 @@ const Contact = () => {
 
       {/* Contact form */}
       <Box maw={500} mx={"auto"}>
-        <form id="contact-form" onSubmit={form.onSubmit(handleSubmit)}>
-          <TextInput label="Name:" placeholder="Your name" key={form.key('name')} withAsterisk {...form.getInputProps("name")} />
-          <TextInput label="Email:" placeholder="Your email" key={form.key('email')} mt="md" withAsterisk {...form.getInputProps("email")} />
-          <Textarea label="Message:" placeholder="Your message" key={form.key('message')} required mt="md" rows={7} cols={40} {...form.getInputProps("message")} />
-          <Button type="submit" mt="md">Submit</Button>
+        <form onSubmit={handleSubmit} action="https://formspree.io/f/mrbegknk" method="POST">
+          <label htmlFor="name">
+            Your Name:
+          </label>
+          <br />
+          <input id="name" name="name" required />
+          <br />
+          <label htmlFor="email">
+            Email:
+          </label>
+          <br />
+          <input id="email" name="email" type="email" required />
+          <br />
+          <label htmlFor="message">
+            Your message:
+          </label>
+          <br />
+          <textarea
+            id="message"
+            name="message"
+            cols={40}
+            rows={7}
+            required
+          />
+          <br />
+          <button type="submit" disabled={state.submitting}>
+            Submit
+          </button>
         </form>
       </Box>
     </>
