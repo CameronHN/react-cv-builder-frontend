@@ -6,7 +6,6 @@ The technologies being used are:
 - [React](https://react.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Mantine](https://mantine.dev/)
-- [Vite](https://vite.dev/)
 
 ## Installation
 Before you get started, ensure that you have Node.js installed on your device. Node can be downloaded from the [Node.js&nbsp;website](https://nodejs.org/en).
@@ -34,6 +33,10 @@ Once downloaded/cloned, open the command prompt or terminal, and use the change 
 ```
 cd <path-to-project-directory/react-cv-builder>
 ```
+It should look like this:
+```
+cd C:/Users/<Name>/<Paths>/react-cv-builder
+```
 
 After you have successfully entered the project's directory, enter the following command in the command prompt to install the required packages and dependencies:
 ```
@@ -45,3 +48,13 @@ Wait for the packages to install. Once completed, enter the following command in
 npm run dev
 ```
 Your terminal should display a localhost and port, indicating where the project is running. For example: ```http://localhost:5173/```. Copy and paste it into your browser to view the project.
+
+## Components
+
+**Mantine**
+- Images are sparingly used either directly into the image component, or are assigned to a variable and then referenced in the image component.
+- The contact form is assembled by using Input and Button
+
+**React**
+- Data is displayed on to the page using React functional components.
+- All data is not hard coded to the web pages. Instead, they are populated into objects with enforced data types. 
