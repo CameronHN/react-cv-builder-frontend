@@ -38,7 +38,7 @@ const Content = () => {
                 <button onClick={() => setCurrentPage("hobbies")}>Hobbies</button>
                 <button onClick={() => setCurrentPage("contact")}>Contact</button>
                 <a href="https://github.com" target='_blank'><button value="GitHub">GitHub</button></a>
-                <a href="src\file\Test_document.pdf" download><button value="Download mt CV">Download my CV</button></a>
+                <a href="src\file\Test_document.pdf" download><button value="Download my CV">Download my CV</button></a>
             </nav>
 
             {/* Main content area where the current page content is rendered */}
