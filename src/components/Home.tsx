@@ -1,4 +1,4 @@
-import { skillsData } from "./Details";
+import { skillsData } from '../data/skillsData';
 import Headshot from "./Headshot";
 import { projectsData } from "./Projects";
 
