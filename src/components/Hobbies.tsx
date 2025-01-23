@@ -48,18 +48,31 @@ const outdoorHobbies: Hobbies[] = [
 ];
 
 const Hobbies = () => {
-    const HobbiesComponent: React.FC<{ data: Hobbies[] }> = ({ data }) => (
-        <div>
-            {
-                data.map((hobbiesSet, index) => (
-                    <div key={index}>
-                        <b>{hobbiesSet.value}</b>
-                        <p>{hobbiesSet.description}</p>
+    const HobbiesComponent: React.FC<{ data: Hobbies[], title: string }> = ({ data, title }) => (
+        // allowZeroExpanded allows the accordion to be collapsible
+        < Accordion allowZeroExpanded>
+            <AccordionItem>
+                <AccordionItemHeading>
+                    <AccordionItemButton>
+                        {title}
+                    </AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                    <div>
+                        {
+                            data.map((hobbiesSet, index) => (
+                                <div key={index}>
+                                    <b>{hobbiesSet.value}</b>
+                                    <p>{hobbiesSet.description}</p>
+                                </div>
+                            ))
+                        }
                     </div>
-                ))
-            }
-        </div>
-    )
+                </AccordionItemPanel>
+            </AccordionItem>
+        </Accordion >
+    );
+
     return (
         <>
             <h2>Hobbies</h2>
@@ -75,19 +88,7 @@ const Hobbies = () => {
                                 />
                             </Card.Section>
                             <Group>
-                                {/* allowZeroExpanded allows the accordion to be collapsible */}
-                                <Accordion allowZeroExpanded>
-                                    <AccordionItem>
-                                        <AccordionItemHeading>
-                                            <AccordionItemButton>
-                                                Indoor Activities
-                                            </AccordionItemButton>
-                                        </AccordionItemHeading>
-                                        <AccordionItemPanel>
-                                            <HobbiesComponent data={indoorHobbies} />
-                                        </AccordionItemPanel>
-                                    </AccordionItem>
-                                </Accordion>
+                                <HobbiesComponent data={indoorHobbies} title='Indoor Activities' />
                             </Group>
                         </Card>
                     </td>
@@ -103,20 +104,8 @@ const Hobbies = () => {
                                 />
                             </Card.Section>
                             <Group>
-                                <Accordion allowZeroExpanded>
-                                    <AccordionItem>
-                                        <AccordionItemHeading>
-                                            <AccordionItemButton>
-                                                Outdoor Activities
-                                            </AccordionItemButton>
-                                        </AccordionItemHeading>
-                                        <AccordionItemPanel>
-                                            <HobbiesComponent data={outdoorHobbies} />
-                                        </AccordionItemPanel>
-                                    </AccordionItem>
-                                </Accordion>
+                                <HobbiesComponent data={outdoorHobbies} title='Outdoor Activities' />
                             </Group>
-
                         </Card>
                     </td>
                 </tr>
