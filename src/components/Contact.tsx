@@ -1,6 +1,6 @@
 import { Button, Box, Anchor } from "@mantine/core";
 import { FaPhone, FaLinkedin, FaAt } from "react-icons/fa6";
-import { useForm } from "@formspree/react";
+import { useForm, ValidationError } from "@formspree/react";
 
 const Contact = () => {
 
@@ -52,6 +52,7 @@ const Contact = () => {
           </label>
           <br />
           <input id="email" name="email" type="email" required />
+          <ValidationError field="email" prefix="Email" errors={state.errors} />
           <br />
           <label htmlFor="message">
             Your message:
