@@ -1,4 +1,4 @@
-const imageUrl = "src/assets/download.jpg";
+const imageUrl: string = "src/assets/download.jpg";
 
 const Headshot = () => {
     return (
