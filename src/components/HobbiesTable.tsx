@@ -1,4 +1,4 @@
-import { Card, Image, Group } from '@mantine/core'
+import { Card, Image, Group, Table } from '@mantine/core'
 import { indoorHobbies, outdoorHobbies } from "../data/hobbiesData";
 import { HobbiesComponent } from "./HobbiesComponent";
 import { HobbiesInterface } from '../interfaces/HobbiesInterface.ts';
@@ -10,9 +10,9 @@ interface Props {
 
 const HobbiesTable: React.FC<Props> = () => {
     return (
-        <table width="80%" align="center">
-            <tr>
-                <td>
+        <Table width="80%" align="center">
+            <Table.Tr>
+                <Table.Td>
                     {/* Card for indoor activities */}
                     <Card shadow="sm" padding="lg" radius="md" withBorder>
                         <Card.Section>
@@ -25,10 +25,10 @@ const HobbiesTable: React.FC<Props> = () => {
                             <HobbiesComponent data={indoorHobbies} title='Indoor Activities' />
                         </Group>
                     </Card>
-                </td>
-            </tr>
-            <tr>
-                <td>
+                </Table.Td>
+            </Table.Tr>
+            <Table.Tr>
+                <Table.Td>
                     {/* Card for outdoor activities */}
                     <Card shadow="sm" padding="lg" radius="md" withBorder>
                         <Card.Section>
@@ -41,9 +41,9 @@ const HobbiesTable: React.FC<Props> = () => {
                             <HobbiesComponent data={outdoorHobbies} title='Outdoor Activities' />
                         </Group>
                     </Card>
-                </td>
-            </tr>
-        </table>
+                </Table.Td>
+            </Table.Tr>
+        </Table>
     );
 };
 
