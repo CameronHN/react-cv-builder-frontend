@@ -1,6 +1,6 @@
 import { skillsData } from '../data/skillsData';
 import Headshot from "./Headshot";
-import { projectsData } from "./Projects";
+import { projectsData } from '../data/projectData';
 
 // Define the interfaces
 interface Person {
