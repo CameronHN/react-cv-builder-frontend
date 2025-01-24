@@ -28,15 +28,20 @@ const Content = () => {
         }
     }
 
+    // Assing a page title to the pages
+    const setPageTitle = (title: string) => {
+        document.title = title;
+    };
+
     return (
         <>
             {/* Navigation bar with buttons to change the current page */}
             <nav>
-                <button onClick={() => setCurrentPage("home")}>Home</button>
-                <button onClick={() => setCurrentPage("details")}>Details</button>
-                <button onClick={() => setCurrentPage("projects")}>Projects</button>
-                <button onClick={() => setCurrentPage("hobbies")}>Hobbies</button>
-                <button onClick={() => setCurrentPage("contact")}>Contact</button>
+                <button onClick={() => { setCurrentPage("home"); setPageTitle("Home") }}>Home</button>
+                <button onClick={() => { setCurrentPage("details"); setPageTitle("Details") }}>Details</button>
+                <button onClick={() => { setCurrentPage("projects"); setPageTitle("Projects") }}>Projects</button>
+                <button onClick={() => { setCurrentPage("hobbies"); setPageTitle("Hobbies") }}>Hobbies</button>
+                <button onClick={() => { setCurrentPage("contact"); setPageTitle("Contact") }}>Contact</button>
                 <a href="https://github.com" target='_blank'><button value="GitHub">GitHub</button></a>
                 <a href="src\file\Test_document.pdf" download><button value="Download my CV">Download my CV</button></a>
             </nav>
