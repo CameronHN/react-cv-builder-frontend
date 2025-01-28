@@ -28,7 +28,7 @@ const Content = () => {
         }
     }
 
-    // Assing a page title to the pages
+    // Assign a page title to the current page
     const setPageTitle = (title: string) => {
         document.title = title;
     };
