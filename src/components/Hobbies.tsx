@@ -1,11 +1,13 @@
-import HobbiesTable from './HobbiesTable';
+import HobbiesCardComponent from './HobbiesCardComponent';
 
-const Hobbies = () => {
+// Hobbies page
+const Hobbies: React.FC = () => {
     return (
         <>
             <h2>Hobbies</h2>
 
-            <HobbiesTable data={[]} />
+            {/* Display the hobbies (Displays the Card) */}
+            <HobbiesCardComponent />
         </>
     );
 };
