@@ -1,29 +1,22 @@
-import { Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel } from "react-accessible-accordion";
 import { HobbiesInterface } from "../interfaces/HobbiesInterface";
+import { Accordion } from '@mantine/core';
 
 export const HobbiesComponent: React.FC<{ data: HobbiesInterface[], title: string }> = ({ data, title }) => (
-    // allowZeroExpanded allows the accordion to be collapsible
-    < Accordion allowZeroExpanded>
-        <AccordionItem>
-            <AccordionItemHeading>
-                <AccordionItemButton>
-                    {title}
-                </AccordionItemButton>
-            </AccordionItemHeading>
-            <AccordionItemPanel>
+    <Accordion variant="separated" multiple>
+        <Accordion.Item value="custom-accordion-item">
+            <Accordion.Control>{title}</Accordion.Control>
+            <Accordion.Panel>
                 <div>
-                    {
-                        data.map((hobbiesSet, index) => (
-                            <div key={index}>
-                                <b>{hobbiesSet.value}</b>
-                                <p>{hobbiesSet.description}</p>
-                            </div>
-                        ))
-                    }
+                    {data.map((hobbiesSet, index) => (
+                        <div key={index}>
+                            <b>{hobbiesSet.value}</b>
+                            <p>{hobbiesSet.description}</p>
+                        </div>
+                    ))}
                 </div>
-            </AccordionItemPanel>
-        </AccordionItem>
-    </Accordion >
+            </Accordion.Panel>
+        </Accordion.Item>
+    </Accordion>
 );
 
 export default HobbiesComponent;
