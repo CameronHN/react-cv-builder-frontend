@@ -1,7 +1,7 @@
 import { projectsData } from '../data/projectData';
 import ProjectComponent from './ProjectComponent';
 
-const Projects = () => {
+const Projects: React.FC = () => {
     return (
         <>
             <h2>Projects</h2>
