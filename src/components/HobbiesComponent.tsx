@@ -1,7 +1,13 @@
 import { HobbiesInterface } from "../interfaces/HobbiesInterface";
 import { Accordion } from '@mantine/core';
 
-export const HobbiesComponent: React.FC<{ data: HobbiesInterface[], title: string }> = ({ data, title }) => (
+interface HobbiesComponentProps {
+    data: HobbiesInterface[];
+    title: string;
+}
+
+export const HobbiesComponent: React.FC<HobbiesComponentProps> = ({ data, title }) => (
+    // Accordion component to display the hobbies, mapping through the hobby item
     <Accordion variant="separated" multiple>
         <Accordion.Item value="custom-accordion-item">
             <Accordion.Control>{title}</Accordion.Control>
