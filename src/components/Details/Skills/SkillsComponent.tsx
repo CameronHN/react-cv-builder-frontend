@@ -1,6 +1,6 @@
-import { SkillsInterface } from "../interfaces/SkillsInterface";
+import { ISkills } from "../../../interfaces/ISkills";
 
-export const SkillsComponent: React.FC<{ data: SkillsInterface[] }> = ({ data }) => (
+export const SkillsComponent: React.FC<{ data: ISkills[] }> = ({ data }) => (
     <div>
         {
             data.map((skillSet, index) => (
