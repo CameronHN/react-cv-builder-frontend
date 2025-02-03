@@ -1,7 +1,7 @@
 import { Anchor, Button } from "@mantine/core";
-import { SocialMediaInterface } from "../interfaces/SocialMediaInterface"
+import { ISocialMedia } from "../../interfaces/ISocialMedia";
 
-export const SocialMediaComponent: React.FC<{ data: SocialMediaInterface[] }> = ({ data }) => (
+export const SocialMediaComponent: React.FC<{ data: ISocialMedia[] }> = ({ data }) => (
     <>
         <h2>Reach out to me!</h2>
 
