@@ -1,6 +1,6 @@
-import { ExperienceInterface } from "../interfaces/ExperienceInterface";
+import { IExperience } from "../../../interfaces/IExperience";
 
-export const ExperienceComponent: React.FC<{ data: ExperienceInterface[] }> = ({ data }) => (
+export const ExperienceComponent: React.FC<{ data: IExperience[] }> = ({ data }) => (
     <div>
         {
             data.map((experienceSet, index) => (
