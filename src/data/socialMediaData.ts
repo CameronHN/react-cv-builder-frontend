@@ -1,7 +1,7 @@
-import { SocialMediaInterface } from "../interfaces/SocialMediaInterface";
+import { ISocialMedia } from "../interfaces/ISocialMedia";
 import { FaPhone, FaLinkedin, FaAt } from "react-icons/fa6";
 
-export const socialMediaData: SocialMediaInterface[] = [
+export const socialMediaData: ISocialMedia[] = [
   {
     name: "Phone",
     link: "https://www.google.com",

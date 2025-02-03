@@ -1,6 +1,6 @@
-import { ProjectInterface } from "../interfaces/ProjectInterface";
+import { IProject } from "../interfaces/IProject";
 
-export const projectsData: ProjectInterface[] = [
+export const projectsData: IProject[] = [
     {
         name: "Weather App",
         date: 'January 2023 - March 2023',

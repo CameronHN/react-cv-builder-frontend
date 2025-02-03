@@ -1,6 +1,6 @@
-import { HobbiesInterface } from '../interfaces/HobbiesInterface';
+import { IHobbies } from '../interfaces/IHobbies';
 
-export const indoorHobbies: HobbiesInterface[] = [
+export const indoorHobbies: IHobbies[] = [
     {
         value: 'Automation/Scripting',
         description:
@@ -13,7 +13,7 @@ export const indoorHobbies: HobbiesInterface[] = [
     }
 ];
 
-export const outdoorHobbies: HobbiesInterface[] = [
+export const outdoorHobbies: IHobbies[] = [
     {
         value: 'Rugby',
         description:

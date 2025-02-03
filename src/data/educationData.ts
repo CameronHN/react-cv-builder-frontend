@@ -1,6 +1,6 @@
-import { EducationInterface } from "../interfaces/EducationInterface";
+import { IEducation } from "../interfaces/IEducation";
 
-export const educationData: EducationInterface[] = [
+export const educationData: IEducation[] = [
   {
     institute: "University of Cape Town",
     qualification: "Bachelor of Science in Computer Science",

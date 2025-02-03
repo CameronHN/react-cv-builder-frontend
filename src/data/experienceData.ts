@@ -1,6 +1,6 @@
-import { ExperienceInterface } from "../interfaces/ExperienceInterface";
+import { IExperience } from "../interfaces/IExperience";
 
-export const experienceData: ExperienceInterface[] = [
+export const experienceData: IExperience[] = [
   {
     role: "Software Developer at Tech Solutions Inc.",
     date: "Jan 2020 - Present",
