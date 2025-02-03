@@ -1,6 +1,6 @@
-import { EducationInterface } from "../interfaces/EducationInterface";
+import { IEducation } from "../../../interfaces/IEducation";
 
-export const EducationComponent: React.FC<{ data: EducationInterface[] }> = ({ data }) => (
+export const EducationComponent: React.FC<{ data: IEducation[] }> = ({ data }) => (
     <div>
         {
             data.map((educationSet, index) => (
@@ -9,7 +9,7 @@ export const EducationComponent: React.FC<{ data: EducationInterface[] }> = ({ d
                     <p>{educationSet.qualification}, {educationSet.dateOfGraduation}</p>
                     <b>Majors:</b>
                     {educationSet.major.map((major) => (
-                        <div>{major ? major : "None"}</div>
+                        <div>{major}</div>
                     ))}
                 </div>
             ))
