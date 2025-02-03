@@ -1,6 +1,6 @@
-import { SkillsInterface } from "../interfaces/SkillsInterface";
+import { ISkills } from "../interfaces/ISkills";
 
-export const skillsData: SkillsInterface[] = [
+export const skillsData: ISkills[] = [
   {
     skillType: "Programming Languages",
     skills: ["JavaScript", "Python", "Java"]
