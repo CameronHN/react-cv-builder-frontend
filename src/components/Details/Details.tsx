@@ -1,11 +1,11 @@
-import ExperienceComponent from './ExperienceComponent';
-import SkillsComponent from './SkillsComponent';
-import EducationComponent from './EducationComponent';
-import { experienceData } from '../data/experienceData';
-import { educationData } from '../data/educationData';
-import { skillsData } from '../data/skillsData';
+import ExperienceComponent from '../Details/Experience/ExperienceComponent';
+import SkillsComponent from './Skills/SkillsComponent';
+import EducationComponent from './Education/EducationComponent';
+import { experienceData } from '../../data/experienceData';
+import { educationData } from '../../data/educationData';
+import { skillsData } from '../../data/skillsData';
 
-const Details = () => {
+const Details: React.FC = () => {
     return (
         <>
             <h2>Work Experience</h2>
