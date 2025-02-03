@@ -1,4 +1,4 @@
-export interface SocialMediaInterface {
+export interface ISocialMedia {
     name: string;
     link: string;
     icon: React.ElementType;

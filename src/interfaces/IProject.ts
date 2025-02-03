@@ -1,5 +1,5 @@
 // Define interface
-export interface ProjectInterface {
+export interface IProject {
     name: string;
     date: string;
     stack: string[];

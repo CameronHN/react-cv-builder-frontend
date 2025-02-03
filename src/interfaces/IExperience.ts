@@ -1,5 +1,5 @@
 // Define the interfaces
-export interface ExperienceInterface {
+export interface IExperience {
     role: string;
     date: string;
     responsibilities: string[];
