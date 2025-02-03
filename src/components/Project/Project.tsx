@@ -1,7 +1,7 @@
-import { projectsData } from '../data/projectData';
+import { projectsData } from '../../data/projectData';
 import ProjectComponent from './ProjectComponent';
 
-const Projects: React.FC = () => {
+const Project: React.FC = () => {
     return (
         <>
             <h2>Projects</h2>
@@ -12,4 +12,4 @@ const Projects: React.FC = () => {
     );
 };
 
-export default Projects
+export default Project

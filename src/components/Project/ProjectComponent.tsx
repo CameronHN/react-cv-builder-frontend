@@ -1,7 +1,7 @@
-import { ProjectInterface } from "../interfaces/ProjectInterface";
+import { IProject } from "../../interfaces/IProject";
 
 // Component to display the project data
-export const ProjectComponent: React.FC<{ data: ProjectInterface[] }> = ({ data }) => (
+export const ProjectComponent: React.FC<{ data: IProject[] }> = ({ data }) => (
     <div>
         {
             data.map((projectSet, index) => (
