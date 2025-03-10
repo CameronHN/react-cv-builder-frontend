@@ -1,24 +1,21 @@
-import ExperienceComponent from '../Details/Experience/ExperienceComponent';
-import SkillsComponent from './Skills/SkillsComponent';
 import EducationComponent from './Education/EducationComponent';
-import { experienceData } from '../../data/experienceData';
-import { educationData } from '../../data/educationData';
-import { skillsData } from '../../data/skillsData';
+import PositionComponent from './Experience/PositionComponent';
+import UserSkillsWithTypeComponent from './Skills/UserSkillsWithTypeComponent';
 
 const Details: React.FC = () => {
     return (
         <>
             <h2>Work Experience</h2>
             <div>
-                <ExperienceComponent data={experienceData} />
+                <PositionComponent />
             </div>
             <h2>Skills</h2>
             <div>
-                <SkillsComponent data={skillsData} />
+                <UserSkillsWithTypeComponent />
             </div>
             <h2>Education</h2>
             <div>
-                <EducationComponent data={educationData} />
+                <EducationComponent />
             </div>
         </>
     );
