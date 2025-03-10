@@ -1,4 +1,3 @@
-import { skillsData } from '../../data/skillsData';
 import Headshot from "./Headshot";
 import { projectsData } from '../../data/projectData';
 import { IPerson } from '../../interfaces/IPerson';
@@ -7,9 +6,7 @@ import { IAbout } from '../../interfaces/IAbout';
 import { personData } from '../../data/personData';
 import { introductionData } from '../../data/introductionData';
 import { aboutData } from '../../data/aboutData';
-
-// Flatten and sort all the skills data into a single array of strings
-const skillsArr: string[] = skillsData.flatMap(skill => skill.skills).sort();
+import UserSkillsComponent from '../Details/Skills/UserSkillsComponent';
 
 // Generate a personal greeting on the landing page
 function personalGreeting(details: IPerson) {
@@ -51,12 +48,9 @@ const Home: React.FC = () => {
             ))}
 
             <h2>Skills</h2>
-
-            {skillsArr.map((skill, index) => (
-                <div key={index}>
-                    {skill}
-                </div>
-            ))}
+            <div>
+                <UserSkillsComponent />
+            </div>
         </>
     );
 };
