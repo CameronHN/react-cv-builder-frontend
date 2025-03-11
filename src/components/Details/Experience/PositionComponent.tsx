@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axiosInstance from "../../../api/axiosInstance";
-import { Position, PositionResponsibility } from "../../../types/Position";
+import { IPosition } from "../../../interfaces/IPosition";
+import { IPositionResponsibility } from "../../../interfaces/IPositionResponsibility";
 
 const PositionComponent: React.FC = () => {
     // State to hold the positions and responsibilities data
-    const [positions, setPositions] = useState<Position[]>([]);
+    const [positions, setPositions] = useState<IPosition[]>([]);
     // State to hold any error messages
     const [error, setError] = useState<string | null>(null);
   
@@ -69,7 +70,7 @@ const PositionComponent: React.FC = () => {
           <h4>Responsibilities:</h4>
           {position.responsibilities &&
             position.responsibilities.map(
-              (responsibility: PositionResponsibility) => (
+              (responsibility: IPositionResponsibility) => (
                 <div key={responsibility.id}>{responsibility.responsibility}</div>
               )
             )}
