@@ -1,6 +1,9 @@
 export interface IEducation {
-    institute: string;
-    qualification: string;
-    dateOfGraduation: string;
-    major: string[];
+  id: number;
+  qualification: string;
+  fieldOfStudy: string;
+  institution: string;
+  startDate: string;
+  endDate: string;
+  major: string;
 }
