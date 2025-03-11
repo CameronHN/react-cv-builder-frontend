@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axiosInstance from "../../../api/axiosInstance";
-import { Education } from "../../../types/Education";
+import { IEducation } from "../../../interfaces/IEducation";
 
 const UserEducationComponent: React.FC = () => {
-  const [educationList, setEducationList] = useState<Education[]>([]);
+  const [educationList, setEducationList] = useState<IEducation[]>([]);
   const [error, setError] = useState<string | null>(null);
   const userId = 1;
 
